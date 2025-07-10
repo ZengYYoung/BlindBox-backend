@@ -4,21 +4,50 @@ const bcrypt = require("bcryptjs");
 
 // 注册
 async function register(req, res) {
-    const { account, password } = req.body;
-    if (!account || !password) return res.status(400).json({ msg: "缺少参数" });
-    const hash = await bcrypt.hash(password, 10);
-    await User.create({ account, password: hash });
-    res.json({ msg: "注册成功" });
+    try {
+        const { account, password } = req.body;
+        if (!account || !password) {
+            return res.status(400).json({ msg: "缺少参数" });
+        }
+        
+        // 检查用户是否已存在
+        const existingUser = await User.findOne({ where: { account } });
+        if (existingUser) {
+            return res.status(400).json({ msg: "账号已存在" });
+        }
+        
+        // 密码加密
+        const hash = await bcrypt.hash(password, 10);
+        
+        // 创建新用户
+        await User.create({ account, password: hash });
+        
+        res.json({ msg: "注册成功" });
+    } catch (error) {
+        console.error('注册错误:', error);
+        res.status(500).json({ msg: "注册失败，请稍后重试" });
+    }
 }
 
 // 登录
 async function login(req, res) {
-    const { account, password } = req.body;
-    const user = await User.findOne({ where: { account } });
-    if (!user || !(await bcrypt.compare(password, user.password)))
-        return res.status(400).json({ msg: "账号或密码错误" });
-    const token = jwt.sign({ id: user.id }, "secret", { expiresIn: "7d" });
-    res.json({ token });
+    try {
+        const { account, password } = req.body;
+        if (!account || !password) {
+            return res.status(400).json({ msg: "缺少参数" });
+        }
+        
+        const user = await User.findOne({ where: { account } });
+        if (!user || !(await bcrypt.compare(password, user.password))) {
+            return res.status(400).json({ msg: "账号或密码错误" });
+        }
+        
+        const token = jwt.sign({ id: user.id }, "secret", { expiresIn: "7d" });
+        res.json({ token, msg: "登录成功" });
+    } catch (error) {
+        console.error('登录错误:', error);
+        res.status(500).json({ msg: "登录失败，请稍后重试" });
+    }
 }
 
 // 盲盒列表
