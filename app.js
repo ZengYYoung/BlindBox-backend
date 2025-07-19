@@ -25,7 +25,18 @@ app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/api", routes);
 
 sequelize.sync().then(async () => {
-    await seed();
+    // 检查数据库中是否已有数据，如果没有才执行种子数据
+    const { User, BlindBox } = require("./models");
+    const userCount = await User.count();
+    const blindBoxCount = await BlindBox.count();
+    
+    if (userCount === 0 && blindBoxCount === 0) {
+        console.log("数据库为空，正在初始化种子数据...");
+        await seed();
+    } else {
+        console.log(`数据库已有数据：用户 ${userCount} 个，盲盒 ${blindBoxCount} 个`);
+    }
+    
     app.listen(3000, () => {
         console.log("Server started at http://localhost:3000");
     });

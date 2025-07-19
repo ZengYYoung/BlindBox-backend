@@ -1,0 +1,423 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "account": "845565988@qq.com",
+      "password": "$2a$10$1w9L6NA9zsxEWwovBeAaLOPWz2ZQmEA5Q0BWtR078TFCF4phiE85K",
+      "balance": 9428,
+      "createdAt": "2025-07-10 07:05:04.821 +00:00",
+      "updatedAt": "2025-07-12 07:58:34.518 +00:00"
+    }
+  ],
+  "blindBoxes": [
+    {
+      "id": 25,
+      "name": "海洋系列",
+      "series": "sea",
+      "image": "/images/seabutton.png",
+      "description": "探索神秘的海洋世界，收集可爱的海洋生物",
+      "price": 59,
+      "stock": 39,
+      "createdAt": "2025-07-12 07:58:00.700 +00:00",
+      "updatedAt": "2025-07-12 07:58:34.515 +00:00"
+    },
+    {
+      "id": 26,
+      "name": "森林系列",
+      "series": "forest",
+      "image": "/images/forestbutton.png",
+      "description": "走进神秘的森林，遇见可爱的森林动物",
+      "price": 59,
+      "stock": 50,
+      "createdAt": "2025-07-12 07:58:00.724 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.724 +00:00"
+    },
+    {
+      "id": 27,
+      "name": "太空系列",
+      "series": "space",
+      "image": "/images/spacebutton.png",
+      "description": "遨游浩瀚宇宙，收集神秘的太空元素",
+      "price": 79,
+      "stock": 30,
+      "createdAt": "2025-07-12 07:58:00.743 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.743 +00:00"
+    },
+    {
+      "id": 28,
+      "name": "糖果系列",
+      "series": "candy",
+      "image": "/images/candybutton.png",
+      "description": "甜蜜的糖果世界，收集各种美味糖果",
+      "price": 49,
+      "stock": 60,
+      "createdAt": "2025-07-12 07:58:00.765 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.765 +00:00"
+    }
+  ],
+  "prizes": [
+    {
+      "id": 121,
+      "blindboxId": 25,
+      "prizeName": "海豚",
+      "prizeImg": "/images/dolphin.png",
+      "rarity": "common",
+      "value": 5,
+      "probability": 0.3,
+      "createdAt": "2025-07-12 07:58:00.707 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.707 +00:00"
+    },
+    {
+      "id": 122,
+      "blindboxId": 25,
+      "prizeName": "海马",
+      "prizeImg": "/images/seahorse.png",
+      "rarity": "common",
+      "value": 5,
+      "probability": 0.3,
+      "createdAt": "2025-07-12 07:58:00.710 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.710 +00:00"
+    },
+    {
+      "id": 123,
+      "blindboxId": 25,
+      "prizeName": "水母",
+      "prizeImg": "/images/jellyfish.png",
+      "rarity": "rare",
+      "value": 15,
+      "probability": 0.2,
+      "createdAt": "2025-07-12 07:58:00.714 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.714 +00:00"
+    },
+    {
+      "id": 124,
+      "blindboxId": 25,
+      "prizeName": "海龟",
+      "prizeImg": "/images/turtle.png",
+      "rarity": "rare",
+      "value": 15,
+      "probability": 0.15,
+      "createdAt": "2025-07-12 07:58:00.717 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.717 +00:00"
+    },
+    {
+      "id": 125,
+      "blindboxId": 25,
+      "prizeName": "美人鱼",
+      "prizeImg": "/images/mermaid.png",
+      "rarity": "secret",
+      "value": 50,
+      "probability": 0.05,
+      "createdAt": "2025-07-12 07:58:00.721 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.721 +00:00"
+    },
+    {
+      "id": 126,
+      "blindboxId": 26,
+      "prizeName": "小鹿",
+      "prizeImg": "/images/deer.png",
+      "rarity": "common",
+      "value": 5,
+      "probability": 0.3,
+      "createdAt": "2025-07-12 07:58:00.727 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.727 +00:00"
+    },
+    {
+      "id": 127,
+      "blindboxId": 26,
+      "prizeName": "狐狸",
+      "prizeImg": "/images/fox.png",
+      "rarity": "common",
+      "value": 5,
+      "probability": 0.3,
+      "createdAt": "2025-07-12 07:58:00.730 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.730 +00:00"
+    },
+    {
+      "id": 128,
+      "blindboxId": 26,
+      "prizeName": "猫头鹰",
+      "prizeImg": "/images/owl.png",
+      "rarity": "rare",
+      "value": 15,
+      "probability": 0.2,
+      "createdAt": "2025-07-12 07:58:00.733 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.733 +00:00"
+    },
+    {
+      "id": 129,
+      "blindboxId": 26,
+      "prizeName": "松鼠",
+      "prizeImg": "/images/squirrel.png",
+      "rarity": "rare",
+      "value": 15,
+      "probability": 0.15,
+      "createdAt": "2025-07-12 07:58:00.737 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.737 +00:00"
+    },
+    {
+      "id": 130,
+      "blindboxId": 26,
+      "prizeName": "独角兽",
+      "prizeImg": "/images/unicorn.png",
+      "rarity": "secret",
+      "value": 50,
+      "probability": 0.05,
+      "createdAt": "2025-07-12 07:58:00.740 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.740 +00:00"
+    },
+    {
+      "id": 131,
+      "blindboxId": 27,
+      "prizeName": "小行星",
+      "prizeImg": "/images/asteroid.png",
+      "rarity": "common",
+      "value": 5,
+      "probability": 0.3,
+      "createdAt": "2025-07-12 07:58:00.746 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.746 +00:00"
+    },
+    {
+      "id": 132,
+      "blindboxId": 27,
+      "prizeName": "火箭",
+      "prizeImg": "/images/rocket.png",
+      "rarity": "common",
+      "value": 5,
+      "probability": 0.3,
+      "createdAt": "2025-07-12 07:58:00.749 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.749 +00:00"
+    },
+    {
+      "id": 133,
+      "blindboxId": 27,
+      "prizeName": "月球车",
+      "prizeImg": "/images/moon-rover.png",
+      "rarity": "rare",
+      "value": 15,
+      "probability": 0.2,
+      "createdAt": "2025-07-12 07:58:00.752 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.752 +00:00"
+    },
+    {
+      "id": 134,
+      "blindboxId": 27,
+      "prizeName": "黑洞",
+      "prizeImg": "/images/BlackHole.png",
+      "rarity": "rare",
+      "value": 15,
+      "probability": 0.15,
+      "createdAt": "2025-07-12 07:58:00.756 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.756 +00:00"
+    },
+    {
+      "id": 135,
+      "blindboxId": 27,
+      "prizeName": "银河",
+      "prizeImg": "/images/theMilkyWay.png",
+      "rarity": "secret",
+      "value": 50,
+      "probability": 0.05,
+      "createdAt": "2025-07-12 07:58:00.762 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.762 +00:00"
+    },
+    {
+      "id": 136,
+      "blindboxId": 28,
+      "prizeName": "棒棒糖",
+      "prizeImg": "/images/lollipop.png",
+      "rarity": "common",
+      "value": 5,
+      "probability": 0.3,
+      "createdAt": "2025-07-12 07:58:00.768 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.768 +00:00"
+    },
+    {
+      "id": 137,
+      "blindboxId": 28,
+      "prizeName": "棉花糖",
+      "prizeImg": "/images/marshmallow.png",
+      "rarity": "common",
+      "value": 5,
+      "probability": 0.3,
+      "createdAt": "2025-07-12 07:58:00.771 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.771 +00:00"
+    },
+    {
+      "id": 138,
+      "blindboxId": 28,
+      "prizeName": "冰淇淋",
+      "prizeImg": "/images/ice-cream.png",
+      "rarity": "rare",
+      "value": 15,
+      "probability": 0.2,
+      "createdAt": "2025-07-12 07:58:00.774 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.774 +00:00"
+    },
+    {
+      "id": 139,
+      "blindboxId": 28,
+      "prizeName": "小熊软糖",
+      "prizeImg": "/images/gummy-bear.png",
+      "rarity": "rare",
+      "value": 15,
+      "probability": 0.15,
+      "createdAt": "2025-07-12 07:58:00.777 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.777 +00:00"
+    },
+    {
+      "id": 140,
+      "blindboxId": 28,
+      "prizeName": "蛋糕",
+      "prizeImg": "/images/cake.png",
+      "rarity": "secret",
+      "value": 50,
+      "probability": 0.05,
+      "createdAt": "2025-07-12 07:58:00.781 +00:00",
+      "updatedAt": "2025-07-12 07:58:00.781 +00:00"
+    }
+  ],
+  "orders": [
+    {
+      "id": 48,
+      "userId": 1,
+      "blindboxId": 25,
+      "prizeId": 123,
+      "price": 59,
+      "status": "已支付",
+      "createdAt": "2025-07-12 07:58:26.418 +00:00",
+      "updatedAt": "2025-07-12 07:58:26.418 +00:00"
+    },
+    {
+      "id": 49,
+      "userId": 1,
+      "blindboxId": 25,
+      "prizeId": 123,
+      "price": 59,
+      "status": "已支付",
+      "createdAt": "2025-07-12 07:58:27.367 +00:00",
+      "updatedAt": "2025-07-12 07:58:27.367 +00:00"
+    },
+    {
+      "id": 50,
+      "userId": 1,
+      "blindboxId": 25,
+      "prizeId": 121,
+      "price": 59,
+      "status": "已支付",
+      "createdAt": "2025-07-12 07:58:28.684 +00:00",
+      "updatedAt": "2025-07-12 07:58:28.684 +00:00"
+    },
+    {
+      "id": 51,
+      "userId": 1,
+      "blindboxId": 25,
+      "prizeId": 121,
+      "price": 59,
+      "status": "已支付",
+      "createdAt": "2025-07-12 07:58:29.527 +00:00",
+      "updatedAt": "2025-07-12 07:58:29.527 +00:00"
+    },
+    {
+      "id": 52,
+      "userId": 1,
+      "blindboxId": 25,
+      "prizeId": 123,
+      "price": 59,
+      "status": "已支付",
+      "createdAt": "2025-07-12 07:58:30.335 +00:00",
+      "updatedAt": "2025-07-12 07:58:30.335 +00:00"
+    },
+    {
+      "id": 53,
+      "userId": 1,
+      "blindboxId": 25,
+      "prizeId": 122,
+      "price": 59,
+      "status": "已支付",
+      "createdAt": "2025-07-12 07:58:30.974 +00:00",
+      "updatedAt": "2025-07-12 07:58:30.974 +00:00"
+    },
+    {
+      "id": 54,
+      "userId": 1,
+      "blindboxId": 25,
+      "prizeId": 122,
+      "price": 59,
+      "status": "已支付",
+      "createdAt": "2025-07-12 07:58:31.648 +00:00",
+      "updatedAt": "2025-07-12 07:58:31.648 +00:00"
+    },
+    {
+      "id": 55,
+      "userId": 1,
+      "blindboxId": 25,
+      "prizeId": 125,
+      "price": 59,
+      "status": "已支付",
+      "createdAt": "2025-07-12 07:58:32.246 +00:00",
+      "updatedAt": "2025-07-12 07:58:32.246 +00:00"
+    },
+    {
+      "id": 56,
+      "userId": 1,
+      "blindboxId": 25,
+      "prizeId": 124,
+      "price": 59,
+      "status": "已支付",
+      "createdAt": "2025-07-12 07:58:32.857 +00:00",
+      "updatedAt": "2025-07-12 07:58:32.857 +00:00"
+    },
+    {
+      "id": 57,
+      "userId": 1,
+      "blindboxId": 25,
+      "prizeId": 121,
+      "price": 59,
+      "status": "已支付",
+      "createdAt": "2025-07-12 07:58:33.504 +00:00",
+      "updatedAt": "2025-07-12 07:58:33.504 +00:00"
+    },
+    {
+      "id": 58,
+      "userId": 1,
+      "blindboxId": 25,
+      "prizeId": 123,
+      "price": 59,
+      "status": "已支付",
+      "createdAt": "2025-07-12 07:58:34.521 +00:00",
+      "updatedAt": "2025-07-12 07:58:34.521 +00:00"
+    }
+  ],
+  "playerShows": [
+    {
+      "id": 1,
+      "userId": 1,
+      "content": "hello Blind Box\n",
+      "images": "[]",
+      "likes": 1,
+      "createdAt": "2025-07-10 07:06:16.774 +00:00",
+      "updatedAt": "2025-07-10 07:06:19.598 +00:00"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "content": "goodbye Blind Box",
+      "images": "[]",
+      "likes": 1,
+      "createdAt": "2025-07-10 07:06:43.847 +00:00",
+      "updatedAt": "2025-07-10 07:06:46.349 +00:00"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "playershowId": 1,
+      "userId": 1,
+      "content": "hello guys",
+      "createdAt": "2025-07-10 07:06:29.563 +00:00",
+      "updatedAt": "2025-07-10 07:06:29.563 +00:00"
+    }
+  ],
+  "timestamp": "2025-07-12T08:01:37.129Z"
+}

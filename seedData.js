@@ -65,7 +65,7 @@ const seedData = [
 
 async function seed() {
     try {
-        // 清空现有数据
+        // 只清空盲盒和奖品数据，保留用户数据
         await Prize.destroy({ where: {} });
         await BlindBox.destroy({ where: {} });
 

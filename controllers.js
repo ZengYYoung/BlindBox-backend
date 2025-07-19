@@ -101,7 +101,7 @@ async function getOrders(req, res) {
         order: [["id", "DESC"]],
         include: [
             { model: BlindBox, attributes: ["name"] },
-            { model: Prize, attributes: ["prizeName", "prizeImg"] }
+            { model: Prize, attributes: ["prizeName", "prizeImg", "rarity"] }
         ]
     });
     res.json({ list: orders.map(o => ({
@@ -109,6 +109,7 @@ async function getOrders(req, res) {
             blindBoxName: o.BlindBox?.name,
             prizeName: o.Prize?.prizeName,
             prizeImg: o.Prize?.prizeImg,
+            rarity: o.Prize?.rarity,
             price: o.price,
             status: o.status,
             createdAt: o.createdAt
@@ -179,8 +180,56 @@ async function getComments(req, res) {
         })) });
 }
 
+// 获取用户信息
+async function getUserInfo(req, res) {
+    try {
+        const user = await User.findByPk(req.user.id, {
+            attributes: ['id', 'account', 'balance', 'createdAt']
+        });
+        if (!user) {
+            return res.status(404).json({ msg: "用户不存在" });
+        }
+        res.json({
+            id: user.id,
+            account: user.account,
+            balance: user.balance,
+            createdAt: user.createdAt
+        });
+    } catch (error) {
+        console.error('获取用户信息错误:', error);
+        res.status(500).json({ msg: "获取用户信息失败" });
+    }
+}
+
+// 充值功能
+async function recharge(req, res) {
+    try {
+        const { amount } = req.body;
+        if (!amount || amount <= 0) {
+            return res.status(400).json({ msg: "充值金额必须大于0" });
+        }
+        
+        const user = await User.findByPk(req.user.id);
+        if (!user) {
+            return res.status(404).json({ msg: "用户不存在" });
+        }
+        
+        // 更新用户余额
+        await user.increment('balance', { by: amount });
+        await user.reload(); // 重新加载用户数据以获取最新余额
+        
+        res.json({
+            msg: "充值成功",
+            balance: user.balance
+        });
+    } catch (error) {
+        console.error('充值错误:', error);
+        res.status(500).json({ msg: "充值失败，请稍后重试" });
+    }
+}
+
 module.exports = {
     register, login, listBlindBoxes, getBlindBoxDetail, drawBlindBox,
     getOrders, getPlayerShows, createPlayerShow, likePlayerShow,
-    commentPlayerShow, getComments
+    commentPlayerShow, getComments, getUserInfo, recharge
 };

@@ -53,6 +53,10 @@ router.post('/blindboxes/:id/draw', auth, async (req, res) => {
 // 订单
 router.get("/orders", auth, ctrl.getOrders);
 
+// 用户信息
+router.get("/user/info", auth, ctrl.getUserInfo);
+router.post("/user/recharge", auth, ctrl.recharge);
+
 // 晒单
 router.get("/playershows", ctrl.getPlayerShows);
 router.post("/playershows", auth, ctrl.createPlayerShow);
@@ -64,6 +68,50 @@ router.get("/playershows/:id/comments", ctrl.getComments);
 router.post("/images", auth, upload.single("file"), (req, res) => {
     const url = `/images/${req.file.filename}`;
     res.json({ url });
+});
+
+// 管理员API
+router.post("/admin/blindboxes", auth, async (req, res) => {
+    try {
+        const { BlindBox } = require('./models');
+        const { name, series, image, description, price, stock } = req.body;
+        
+        if (!name || !series || !price || !stock) {
+            return res.status(400).json({ msg: '缺少必要参数' });
+        }
+        
+        const newBox = await BlindBox.create({
+            name,
+            series,
+            image: image || '',
+            description: description || '',
+            price: parseInt(price),
+            stock: parseInt(stock)
+        });
+        
+        res.json({ msg: '添加成功', box: newBox });
+    } catch (error) {
+        console.error('添加盲盒失败:', error);
+        res.status(500).json({ msg: '添加失败' });
+    }
+});
+
+router.delete("/admin/blindboxes/:id", auth, async (req, res) => {
+    try {
+        const { BlindBox, Prize } = require('./models');
+        const boxId = req.params.id;
+        
+        // 删除相关奖品
+        await Prize.destroy({ where: { blindboxId: boxId } });
+        
+        // 删除盲盒
+        await BlindBox.destroy({ where: { id: boxId } });
+        
+        res.json({ msg: '删除成功' });
+    } catch (error) {
+        console.error('删除盲盒失败:', error);
+        res.status(500).json({ msg: '删除失败' });
+    }
 });
 
 module.exports = router;

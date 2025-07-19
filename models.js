@@ -4,7 +4,7 @@ const sequelize = require('./db');
 const User = sequelize.define('User', {
     account: DataTypes.STRING,
     password: DataTypes.STRING,
-    balance: { type: DataTypes.INTEGER, defaultValue: 1000 },
+    balance: { type: DataTypes.INTEGER, defaultValue: 0 },
 });
 
 const BlindBox = sequelize.define('BlindBox', {
